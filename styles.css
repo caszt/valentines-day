@@ -1,3 +1,112 @@
+.bouquet-popup {
+  position: fixed;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  font-size: 5rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.bouquet-popup.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Dark background */
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0);
+  z-index: 9998;
+  pointer-events: none;
+  transition: background 1s ease;
+}
+
+.dark-overlay.active {
+  background: rgba(0,0,0,0.6);
+}
+
+/* Bouquet perfectly centered */
+.bouquet-popup {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, 150%) scale(0.3);
+  font-size: 7rem;
+  opacity: 0;
+  z-index: 9999;
+  transition: transform 1.5s ease, opacity 1.5s ease;
+  text-shadow: 0 0 25px pink, 0 0 50px hotpink;
+}
+
+/* Float upward to exact center */
+.bouquet-popup.float {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* SUPER huge dramatic size */
+.bouquet-popup.big {
+  transform: translate(-50%, -50%) scale(5);
+}
+
+/* Particles */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: sparkleAnim 2s linear forwards;
+}
+
+@keyframes sparkleAnim {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: translateY(-120px) scale(0.5); }
+}
+
+/* Petals */
+.petal {
+  position: absolute;
+  font-size: 1.3rem;
+  animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+  0% { opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Hearts */
+.heart {
+  position: absolute;
+  font-size: 1.6rem;
+  animation: heartFloat 3s ease-out forwards;
+}
+
+@keyframes heartFloat {
+  0% { opacity: 1; }
+  100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
+}
+
+
+
+
+
 :root {
   --bg-1: #0e0a14;
   --bg-2: #1a1023;
