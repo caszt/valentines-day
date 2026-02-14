@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Love</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <header class="topbar">
+    <div class="topbar-head">
+      <h1 class="brand">Our Little Universe</h1>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-controls="main-nav"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="nav" id="main-nav">
+      <button class="nav-btn active" data-target="home">Home</button>
+      <button class="nav-btn" data-target="time-together">Time Together</button>
+
+      <div class="nav-dropdown">
+        <button class="nav-btn dropdown-toggle">Reasons Why..</button>
+        <div class="dropdown-menu">
+          <button class="dropdown-item" data-target="reasons-love">I love you</button>
+          <button class="dropdown-item" data-target="reasons-happy">I am happy</button>
+          <button class="dropdown-item" data-target="reasons-remind">These remind me of you</button>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-btn dropdown-toggle">Favorites</button>
+        <div class="dropdown-menu">
+          <button class="dropdown-item" data-target="fav-my-songs">Kit's favorite songs</button>
+          <button class="dropdown-item" data-target="fav-partner-songs">Cassey's favorite songs</button>
+          <button class="dropdown-item" data-target="fav-my-foods">Kit's favorite foods</button>
+          <button class="dropdown-item" data-target="fav-partner-foods">Cassey's favorite foods</button>
+        </div>
+      </div>
+
+      <button class="nav-btn" data-target="random-message">Random Message</button>
+      <button class="nav-btn" data-target="mini-games">Mini Games</button>
+      <button class="nav-btn" data-target="secret-letter">A Secret Letter...</button>
+    </nav>
+  </header>
+
+  <main class="content-wrap">
+    <section class="view active" id="home">
+      <div class="hero">
+        <p class="hero-top">For the one who makes my every day feel magical</p>
+        <h2>Hi Seah, welcome home.</h2>
+        <p class="hero-sub">This page is our tiny world. Click the buttons below and explore every little memory, reason, and surprise.</p>
+        <div class="home-grid">
+          <button class="home-card" data-target="time-together">Time Together</button>
+          <div class="home-dropdown">
+            <button class="home-card home-toggle" type="button">Reasons Why</button>
+            <div class="home-menu">
+              <button class="home-menu-item" data-target="reasons-love">I love you</button>
+              <button class="home-menu-item" data-target="reasons-happy">I am happy</button>
+              <button class="home-menu-item" data-target="reasons-remind">These remind me of you</button>
+            </div>
+          </div>
+          <div class="home-dropdown">
+            <button class="home-card home-toggle" type="button">Favorites</button>
+            <div class="home-menu">
+              <button class="home-menu-item" data-target="fav-my-songs">Kit's favorite songs</button>
+              <button class="home-menu-item" data-target="fav-partner-songs">Cassey's favorite songs</button>
+              <button class="home-menu-item" data-target="fav-my-foods">Kit's favorite foods</button>
+              <button class="home-menu-item" data-target="fav-partner-foods">Cassey's favorite foods</button>
+            </div>
+          </div>
+          <button class="home-card" data-target="random-message">Random Message</button>
+          <button class="home-card" data-target="mini-games">Mini Games</button>
+          <button class="home-card" data-target="secret-letter">Secret Letter</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="time-together">
+      <div class="card">
+        <h2 class="title-script">Time Together</h2>
+        <p class="muted">Every second with you is my favorite.</p>
+        <div class="timer-grid">
+          <div class="timer-box"><span id="years">0</span><small>Years</small></div>
+          <div class="timer-box"><span id="months">0</span><small>Months</small></div>
+          <div class="timer-box"><span id="days">0</span><small>Days</small></div>
+          <div class="timer-box"><span id="hours">0</span><small>Hours</small></div>
+          <div class="timer-box"><span id="minutes">0</span><small>Minutes</small></div>
+          <div class="timer-box"><span id="seconds">0</span><small>Seconds</small></div>
+        </div>
+        <p class="muted" id="start-date-text"></p>
+      </div>
+    </section>
+
+    <section class="view" id="reasons-love">
+      <div class="card slider-card">
+        <h2 class="title-script">I love you</h2>
+        <img id="love-image" class="reason-image" src="" alt="Love memory" />
+        <p id="love-text" class="reason-text"></p>
+        <div class="slider-controls">
+          <button id="love-prev">Previous</button>
+          <button id="love-next">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="reasons-happy">
+      <div class="card slider-card">
+        <h2 class="title-script">I am happy</h2>
+        <p id="happy-text" class="reason-text"></p>
+        <div class="slider-controls">
+          <button id="happy-prev">Previous</button>
+          <button id="happy-next">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="reasons-remind">
+      <div class="card slider-card">
+        <h2 class="title-script">These remind me of you</h2>
+        <img id="remind-image" class="reason-image" src="" alt="Reminder image" />
+        <p id="remind-text" class="reason-text"></p>
+        <div class="slider-controls">
+          <button id="remind-prev">Previous</button>
+          <button id="remind-next">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="fav-my-songs">
+      <div class="card">
+        <h2 class="title-script">Kit's favorite songs</h2>
+        <div id="my-songs-list" class="songs-grid"></div>
+      </div>
+    </section>
+
+    <section class="view" id="fav-partner-songs">
+      <div class="card">
+        <h2 class="title-script">Cassey's favorite songs</h2>
+        <form id="partner-song-form" class="form-grid">
+          <input id="song-title" type="text" placeholder="Song title" required />
+          <input id="song-artist" type="text" placeholder="Artist" required />
+          <input id="song-embed" type="url" placeholder="Embed URL (Spotify/YouTube iframe src)" required />
+          <button type="submit">Add Song</button>
+        </form>
+        <div id="partner-songs-list" class="songs-grid"></div>
+      </div>
+    </section>
+
+    <section class="view" id="fav-my-foods">
+      <div class="card">
+        <h2 class="title-script">Kit's favorite foods</h2>
+        <div id="my-foods-list" class="food-grid"></div>
+      </div>
+    </section>
+
+    <section class="view" id="fav-partner-foods">
+      <div class="card">
+        <h2 class="title-script">Cassey's favorite foods</h2>
+        <form id="partner-food-form" class="inline-form">
+          <input id="partner-food-input" type="text" placeholder="Add a favorite food..." required />
+          <button type="submit">Add Food</button>
+        </form>
+        <div id="partner-foods-list" class="food-grid"></div>
+      </div>
+    </section>
+
+    <section class="view" id="random-message">
+      <div class="card center">
+        <h2 class="title-script">A random message for you</h2>
+        <p id="random-message-text" class="reason-text">Click the button for a surprise message.</p>
+        <button id="new-random-message">Give me a message</button>
+      </div>
+    </section>
+
+    <section class="view" id="mini-games">
+      <div class="card">
+        <h2 class="title-script">Mini games</h2>
+
+        <div class="game-block">
+          <h3>Heart Tap Challenge</h3>
+          <p>Tap the heart button 20 times in 10 seconds.</p>
+          <button id="start-heart-game">Start</button>
+          <button id="heart-button" disabled>Tap Heart</button>
+          <p id="heart-game-status" class="muted"></p>
+        </div>
+
+        <div class="game-block">
+          <h3>Guess My Love Number</h3>
+          <p>Guess a number from 1 to 20. You have 5 tries.</p>
+          <div class="inline-form">
+            <input id="guess-input" type="number" min="1" max="20" placeholder="1-20" />
+            <button id="submit-guess">Guess</button>
+          </div>
+          <p id="guess-status" class="muted"></p>
+        </div>
+
+        <div class="game-block">
+          <h3>Love Quiz</h3>
+          <p>Answer romantic questions. Score 4/5 to win.</p>
+          <button id="start-quiz-game">Start Quiz</button>
+          <p id="quiz-progress" class="muted"></p>
+          <p id="quiz-question" class="reason-text"></p>
+          <div id="quiz-choices" class="quiz-choices"></div>
+          <p id="quiz-status" class="muted"></p>
+        </div>
+
+        <div class="game-block">
+          <h3>Memory Match</h3>
+          <p>Find all matching pairs to complete the game.</p>
+          <button id="start-memory-game">Start Memory</button>
+          <div id="memory-grid" class="memory-grid"></div>
+          <p id="memory-status" class="muted"></p>
+        </div>
+
+        <div class="game-block">
+          <h3>Catch the Heart</h3>
+          <p>Catch the moving heart 12 times in 15 seconds.</p>
+          <button id="start-catch-game">Start Catch</button>
+          <div id="catch-area" class="catch-area">
+            <button id="catch-heart" class="catch-heart" type="button" disabled>❤</button>
+          </div>
+          <p id="catch-status" class="muted"></p>
+        </div>
+
+        <div class="game-block">
+          <h3>Love Reflex</h3>
+          <p>Wait for the signal, then tap fast. Under 1 second wins.</p>
+          <button id="start-reflex-game">Start Reflex</button>
+          <button id="reflex-target" class="reflex-target" type="button" disabled>Wait...</button>
+          <p id="reflex-status" class="muted"></p>
+        </div>
+
+        <div class="game-block">
+          <h3>Romantic Word Scramble</h3>
+          <p>Unscramble 5 love words. Score 4/5 to win.</p>
+          <button id="start-scramble-game">Start Scramble</button>
+          <p id="scramble-word" class="scramble-word">Press start to begin.</p>
+          <div class="inline-form">
+            <input id="scramble-input" type="text" placeholder="Your answer..." />
+            <button id="submit-scramble" type="button">Submit</button>
+          </div>
+          <p id="scramble-progress" class="muted"></p>
+          <p id="scramble-status" class="muted"></p>
+        </div>
+
+        <div class="game-block">
+          <h3>Rock Paper Love</h3>
+          <p>Beat the game in a best-of-3 match.</p>
+          <button id="start-rps-game">Start Match</button>
+          <div class="rps-row">
+            <button class="rps-choice" data-choice="rock" type="button" disabled>Rock</button>
+            <button class="rps-choice" data-choice="paper" type="button" disabled>Paper</button>
+            <button class="rps-choice" data-choice="scissors" type="button" disabled>Scissors</button>
+          </div>
+          <p id="rps-score" class="muted"></p>
+          <p id="rps-status" class="muted"></p>
+        </div>
+
+        <p id="game-secret" class="game-secret hidden">Secret unlocked: No matter what game we play, I always choose you.</p>
+      </div>
+    </section>
+
+    <section class="view" id="secret-letter">
+      <div class="card">
+        <h2 class="title-script">A secret letter...</h2>
+        <div id="letter-lock-panel" class="lock-box">
+          <p class="muted">Enter the password to read the letter.</p>
+          <div class="inline-form">
+            <input id="letter-password-input" type="password" placeholder="Password" />
+            <button id="unlock-letter-btn" type="button">Unlock</button>
+          </div>
+          <p id="letter-lock-status" class="muted"></p>
+        </div>
+        <article id="letter-content" class="letter hidden"></article>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
