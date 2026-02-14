@@ -4,6 +4,91 @@ const themeCycleKey = "romantic_theme_cycle_index";
 const lastSectionKey = "last_open_section";
 const sliderStateKey = "reasons_slider_state";
 
+
+function createParticles(type, count) {
+  const container = document.getElementById("particles");
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement("div");
+
+    if (type === "sparkle") {
+      el.className = "sparkle";
+      el.innerHTML = "✨";
+    }
+    if (type === "petal") {
+      el.className = "petal";
+      el.innerHTML = "🌸";
+    }
+    if (type === "heart") {
+      el.className = "heart";
+      el.innerHTML = "💖";
+    }
+
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.top = Math.random() * 100 + "vh";
+
+    container.appendChild(el);
+
+    setTimeout(() => el.remove(), 4000);
+  }
+}
+
+function createParticles(type, count) {
+  const container = document.getElementById("particles");
+
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement("div");
+
+    if (type === "sparkle") {
+      el.className = "sparkle";
+      el.innerHTML = "✨";
+    }
+    if (type === "petal") {
+      el.className = "petal";
+      el.innerHTML = "🌸";
+    }
+    if (type === "heart") {
+      el.className = "heart";
+      el.innerHTML = "💖";
+    }
+
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.top = Math.random() * 100 + "vh";
+
+    container.appendChild(el);
+
+    setTimeout(() => el.remove(), 4000);
+  }
+}
+
+function showBouquet() {
+  const overlay = document.getElementById("dark-overlay");
+  const bouquet = document.getElementById("bouquet-popup");
+  const sound = document.getElementById("sparkle-sound");
+
+  if (!overlay || !bouquet) return;
+
+  overlay.classList.add("active");
+
+  setTimeout(() => {
+    bouquet.classList.add("float");
+  }, 200);
+
+  setTimeout(() => {
+    bouquet.classList.add("big");
+    createParticles("sparkle", 25);
+    createParticles("heart", 20);
+    createParticles("petal", 30);
+    if (sound) sound.play();
+  }, 1700);
+
+  setTimeout(() => {
+    overlay.classList.remove("active");
+    bouquet.classList.remove("float", "big");
+  }, 6500);
+}
+
+
+
 const themePalettes = [
   {
     "--bg-1": "#0e0a14",
@@ -1497,6 +1582,9 @@ function init() {
       console.error("Init step failed:", error);
     }
   };
+
+runSafe(showBouquet);
+
 
   runSafe(applyRotatingTheme);
   runSafe(bindMobileMenu);
